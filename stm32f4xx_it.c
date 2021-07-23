@@ -95,7 +95,7 @@ void EXTI0_IRQHandler(void)
   if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_0) != RESET)
   {
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_0);
-		os_intHandler(&btnPressed);
+		os_intHandler(btnPressed);
   }
 
 }
@@ -108,7 +108,7 @@ void USART2_IRQHandler(void)
 	if(LL_USART_IsActiveFlag_RXNE(USART2))
 	{
 		LL_USART_ClearFlag_RXNE(USART2);
-		os_intHandler(&uart_rxItHandler);
+		os_intHandler(uart_rxItHandler);
 	}
 	
 }
